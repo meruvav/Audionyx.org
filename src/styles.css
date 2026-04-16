@@ -1,0 +1,250 @@
+:root {
+  --blue-1: #6eb7ee;
+  --blue-2: #49a3df;
+  --blue-3: #2e78b0;
+  --blue-4: #1e5f90;
+  --ink: #17324f;
+  --muted: #4d6d88;
+  --bg: #edf5fb;
+  --panel: #ffffff;
+  --border: #bfd7ea;
+  --soft: #f7fbfe;
+}
+* { box-sizing: border-box; }
+html, body, #root { min-height: 100%; }
+body {
+  margin: 0;
+  font-family: 'Ubuntu', sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+}
+button, input, textarea, select {
+  font: inherit;
+}
+a { color: var(--blue-4); }
+button {
+  border: none;
+  cursor: pointer;
+}
+.site-shell {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 18px;
+}
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+.site-header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+.site-tagline {
+  margin: 6px 0 0;
+  color: var(--muted);
+}
+.status {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  padding: 10px 12px;
+  border-radius: 6px;
+  min-width: 180px;
+}
+.marketing-nav {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+.marketing-link {
+  background: var(--blue-2);
+  color: white;
+  padding: 10px 14px;
+  border-radius: 4px;
+}
+.marketing-link.active,
+.marketing-link:hover { background: var(--blue-4); }
+.page-frame {
+  display: grid;
+  gap: 18px;
+}
+.page-stack {
+  display: grid;
+  gap: 18px;
+}
+.hero-cta-row,
+.quick-grid,
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.quick-grid button,
+.hero-cta-row button,
+.actions button,
+.info-card button,
+.paypal-form button {
+  background: var(--blue-2);
+  color: white;
+  padding: 10px 14px;
+  border-radius: 4px;
+}
+.quick-grid button:hover,
+.hero-cta-row button:hover,
+.actions button:hover,
+.info-card button:hover,
+.paypal-form button:hover {
+  background: var(--blue-4);
+}
+.spaced-top { margin-top: 12px; }
+.seo-block,
+.panel,
+.info-card,
+.affiliate-card,
+.support-box {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+.seo-block {
+  padding: 18px;
+}
+.seo-block h3,
+.support-box h3,
+.affiliate-card h4,
+.info-card h4 {
+  margin-top: 0;
+}
+.panel {
+  overflow: hidden;
+}
+.panel-header {
+  background: linear-gradient(180deg, var(--blue-1), var(--blue-2));
+  color: white;
+  padding: 14px 16px;
+}
+.panel-header h2 { margin: 0; font-size: 1.45rem; }
+.panel-body { padding: 16px; }
+.field {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.field span { font-weight: 700; }
+input, textarea, select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--soft);
+}
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+.card-grid.three-up {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.info-card,
+.affiliate-card {
+  padding: 16px;
+}
+.info-card p,
+.affiliate-card p { color: var(--muted); }
+.table-like {
+  display: grid;
+  gap: 12px;
+}
+.table-like > div {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+.tools-layout {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 16px;
+}
+.sidebar {
+  background: #f5fbff;
+  padding: 4px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  height: fit-content;
+}
+.nav-btn {
+  width: 100%;
+  margin: 2px 0;
+  padding: 12px 10px;
+  text-align: left;
+  background: var(--blue-2);
+  color: white;
+  border-radius: 2px;
+  position: relative;
+}
+.nav-btn.active, .nav-btn:hover { background: var(--blue-3); }
+.badge {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  background: #7ed957;
+  color: white;
+  font-size: 11px;
+  border-radius: 999px;
+  padding: 3px 7px;
+}
+.tools-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.tools-header-row h2 {
+  margin: 0;
+}
+.tools-main {
+  min-width: 0;
+}
+.support-box {
+  padding: 16px;
+}
+.paypal-form {
+  margin-top: 12px;
+}
+ul { margin-top: 0; }
+@media (max-width: 1024px) {
+  .card-grid.three-up,
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+  .tools-layout {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4px;
+  }
+}
+@media (max-width: 720px) {
+  .site-header,
+  .tools-header-row,
+  .table-like > div {
+    grid-template-columns: 1fr;
+    display: grid;
+  }
+  .status {
+    min-width: 0;
+  }
+  .marketing-nav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
