@@ -49,7 +49,12 @@ const dtmfMap = {
 const affiliateProducts = [
   {
     title: 'Closed-back monitoring headphones',
-    copy: 'Use this slot for an affiliate link to accurate wired headphones. Hearing tests on laptop speakers are garbage.',
+    copy: 'Audio-Technica ATH-M20x Professional Studio Monitor Headphones, Black',
+    copy: '1. Advanced build quality and engineering; Designed for studio tracking and mixing
+           2. 40 mm drivers with rare earth magnets and copper clad aluminum wire voice coils
+           3. Tuned for enhanced low frequency performance
+           4. Circumaural design contours around the ears for excellent sound isolation in loud environments
+           5. Convenient single side cable exit',
     href: 'https://www.amazon.com/Audio-Technica-ATH-M50x-Professional-Monitor-Headphones/dp/B00HVLUR86/ref=sr_1_3?crid=2DQ1DKOLGJLAP&dib=eyJ2IjoiMSJ9.5MKHfGzsB4UfQF8sdFgDXIjxPvVD4DOEt2cs2W4wRR5x67fumZnaLcmTL-OTXzNHNVAjTp_GxF9aor_rvkyLOWPJWfC3NDct-x3b8SuiUxXRoxiDnn_r_aLhTzDJWLSQDbHkXQwhga3c81hokA0_VCIVgzt5Y8Y-dkCxQWcZlOmkOiMan7s9xPSH9h-LcLkOiblYSmLfAbzQxc1md150mBKU0OReNgi81tbWfI6rAUrmMhBV8uJxFhT181DIw9adM9ftUAVTtj6xqBaYGDLXK-5_4UYJzRozoMyT4nIWXUQ.nUvw5NvXKRbM7IDZZZoeEYstSgHLqoV3s6bM6NUNrqo&dib_tag=se&keywords=Closed-back%2Bmonitoring%2Bheadphones&qid=1776396849&sprefix=closed-back%2Bmonitoring%2Bheadphones%2Caps%2C193&sr=8-3&th=1'
   },
   {
