@@ -16,7 +16,7 @@ export default function SupportPage() {
             and ongoing improvements to the browser audio experience.
           </p>
           <form action="https://www.paypal.com/donate" method="post" target="_blank" className="paypal-form">
-            <input type="hidden" name="business" value="YOUR_PAYPAL_EMAIL@example.com" />
+            <input type="hidden" name="business" value="vinai.meruva@gmail.com" />
             <input type="hidden" name="currency_code" value="USD" />
             <button type="submit">Pay with PayPal</button>
           </form>
