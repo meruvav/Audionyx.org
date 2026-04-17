@@ -26,6 +26,12 @@ button {
   border: none;
   cursor: pointer;
 }
+.button-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
 .site-shell {
   max-width: 1400px;
   margin: 0 auto;
@@ -64,6 +70,7 @@ button {
   color: white;
   padding: 10px 14px;
   border-radius: 4px;
+  text-decoration: none;
 }
 .marketing-link.active,
 .marketing-link:hover { background: var(--blue-4); }
@@ -85,6 +92,7 @@ button {
 .quick-grid button,
 .hero-cta-row button,
 .actions button,
+.button-link,
 .info-card button,
 .paypal-form button {
   background: var(--blue-2);
@@ -95,6 +103,7 @@ button {
 .quick-grid button:hover,
 .hero-cta-row button:hover,
 .actions button:hover,
+.button-link:hover,
 .info-card button:hover,
 .paypal-form button:hover {
   background: var(--blue-4);
@@ -214,6 +223,11 @@ input, textarea, select {
 }
 .support-box {
   padding: 16px;
+}
+.affiliate-tag {
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--muted);
 }
 .paypal-form {
   margin-top: 12px;
