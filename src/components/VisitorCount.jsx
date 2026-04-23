@@ -1,31 +1,21 @@
-import { useEffect, useMemo, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
-function getCounterKey(pathname) {
-  if (pathname === '/') {
-    return 'home';
-  }
-
-  return pathname.replace(/^\/+/, '').replace(/[^a-z0-9-]/gi, '-').toLowerCase();
-}
+const COUNTER_KEY = 'site-total';
+const SESSION_KEY = 'audionyx-visited:site-total';
 
 export default function VisitorCount() {
-  const location = useLocation();
   const [count, setCount] = useState(null);
   const [error, setError] = useState(false);
 
-  const counterKey = useMemo(() => getCounterKey(location.pathname), [location.pathname]);
-
   useEffect(() => {
     let cancelled = false;
-    const sessionKey = `audionyx-visited:${counterKey}`;
-    const endpoint = `https://api.countapi.xyz/hit/audionyx.org/${counterKey}`;
-    const hasVisitedInSession = window.sessionStorage.getItem(sessionKey) === '1';
+    const endpoint = `https://api.countapi.xyz/hit/audionyx.org/${COUNTER_KEY}`;
+    const hasVisitedInSession = window.sessionStorage.getItem(SESSION_KEY) === '1';
 
     async function loadCount() {
       try {
         const url = hasVisitedInSession
-          ? `https://api.countapi.xyz/get/audionyx.org/${counterKey}`
+          ? `https://api.countapi.xyz/get/audionyx.org/${COUNTER_KEY}`
           : endpoint;
         const response = await fetch(url);
 
@@ -39,7 +29,7 @@ export default function VisitorCount() {
           setCount(typeof data.value === 'number' ? data.value : null);
           setError(false);
           if (!hasVisitedInSession) {
-            window.sessionStorage.setItem(sessionKey, '1');
+            window.sessionStorage.setItem(SESSION_KEY, '1');
           }
         }
       } catch {
@@ -54,11 +44,11 @@ export default function VisitorCount() {
     return () => {
       cancelled = true;
     };
-  }, [counterKey]);
+  }, []);
 
   return (
     <footer className="visitor-count" aria-live="polite">
-      <strong>Visitor count:</strong>{' '}
+      <strong>Total visitors:</strong>{' '}
       {error ? 'Unavailable right now' : count === null ? 'Loading...' : count.toLocaleString()}
     </footer>
   );
