@@ -1,10 +1,11 @@
 import AffiliateCard from '../components/AffiliateCard';
+import FrequencyVisual from '../components/FrequencyVisual';
 import Panel from '../components/Panel';
 import SeoBlock from '../components/SeoBlock';
 import { affiliateProducts } from '../constants/site';
 
 export default function HearingTestPage({ tools }) {
-  const { playFrequencies, setSweepStart, setSweepEnd, setDuration, runSweep, stop } = tools;
+  const { playFrequencies, setSweepStart, setSweepEnd, setDuration, runSweep, stop, currentVisual } = tools;
 
   return (
     <div className="page-stack">
@@ -29,6 +30,8 @@ export default function HearingTestPage({ tools }) {
           <button onClick={stop}>Stop</button>
         </div>
       </Panel>
+
+      <FrequencyVisual visual={currentVisual} />
 
       <SeoBlock title="Recommended headphones after the test" intro="These affiliate placements sit directly after the testing block, where they are most relevant.">
         <div className="card-grid">

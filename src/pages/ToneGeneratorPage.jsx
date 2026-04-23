@@ -1,5 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
 import AffiliateCard from '../components/AffiliateCard';
+import FrequencyVisual from '../components/FrequencyVisual';
 import Panel from '../components/Panel';
 import SeoBlock from '../components/SeoBlock';
 import { affiliateProducts } from '../constants/site';
@@ -18,6 +19,7 @@ export default function ToneGeneratorPage({ tools }) {
     exportCurrent,
     stop,
     setActive,
+    currentVisual,
   } = tools;
 
   const openTool = (toolId) => {
@@ -58,6 +60,8 @@ export default function ToneGeneratorPage({ tools }) {
           <button onClick={stop}>Stop</button>
         </div>
       </Panel>
+
+      <FrequencyVisual visual={currentVisual} />
 
       <SeoBlock title="Recommended gear after the tone test" intro="These affiliate blocks come immediately after the main tone generator so they are tied to the user's test flow.">
         <div className="card-grid">
