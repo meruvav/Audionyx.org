@@ -3,11 +3,14 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import { routeTitles } from './constants/site';
 import { useAudioTools } from './hooks/useAudioTools';
 import AboutPage from './pages/AboutPage';
+import CalculatorsPage from './pages/CalculatorsPage';
 import MarketingLayout from './layouts/MarketingLayout';
 import FrequencyGuidePage from './pages/FrequencyGuidePage';
 import HearingTestPage from './pages/HearingTestPage';
 import HomePage from './pages/HomePage';
+import MotionTracePage from './pages/MotionTracePage';
 import NotFoundPage from './pages/NotFoundPage';
+import RightAngleGrowthPage from './pages/RightAngleGrowthPage';
 import SleepFrequenciesPage from './pages/SleepFrequenciesPage';
 import SupportPage from './pages/SupportPage';
 import ToneGeneratorPage from './pages/ToneGeneratorPage';
@@ -25,6 +28,9 @@ function AppRoutes() {
     <Routes>
       <Route element={<MarketingLayout status={tools.status} />}>
         <Route path="/" element={<HomePage />} />
+        <Route path="/motion-trace" element={<MotionTracePage />} />
+        <Route path="/right-angle-growth" element={<RightAngleGrowthPage />} />
+        <Route path="/calculators" element={<CalculatorsPage />} />
         <Route path="/hearing-test" element={<HearingTestPage tools={tools} />} />
         <Route path="/tone-generator" element={<ToneGeneratorPage tools={tools} />} />
         <Route path="/sleep-frequencies" element={<SleepFrequenciesPage tools={tools} />} />

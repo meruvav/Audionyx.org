@@ -41,13 +41,25 @@ export default function ThemeModeSelect() {
   }
 
   return (
-    <label className="theme-mode">
+    <div className="theme-mode" role="group" aria-label="Color mode">
       <span>Color mode</span>
-      <select value={mode} onChange={handleChange} aria-label="Color mode">
-        <option value="light">Light</option>
-        <option value="dark">Dark</option>
-        <option value="system">System</option>
-      </select>
-    </label>
+      <div className="theme-mode-toggle">
+        {[
+          { value: 'light', label: 'Light' },
+          { value: 'dark', label: 'Dark' },
+          { value: 'system', label: 'System' },
+        ].map((option) => (
+          <button
+            key={option.value}
+            type="button"
+            className={`theme-toggle-btn${mode === option.value ? ' active' : ''}`}
+            onClick={() => handleChange({ target: { value: option.value } })}
+            aria-pressed={mode === option.value}
+          >
+            {option.label}
+          </button>
+        ))}
+      </div>
+    </div>
   );
 }

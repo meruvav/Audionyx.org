@@ -28,6 +28,50 @@ function useAudioStopper() {
   return { nodesRef, stop };
 }
 
+function getVisualProfile(frequencies, kind = 'tone') {
+  if (kind === 'noise') {
+    return {
+      alt: 'Abstract sand-like grain pattern inspired by vibrating speaker noise.',
+      profile: 'noise',
+      title: 'Noise field',
+    };
+  }
+
+  if (kind === 'sweep') {
+    return {
+      alt: 'Curving cymatics-style line pattern inspired by a frequency sweep across sand.',
+      profile: 'sweep',
+      title: 'Sweep pattern',
+    };
+  }
+
+  const average = frequencies.length
+    ? frequencies.reduce((sum, value) => sum + value, 0) / frequencies.length
+    : 0;
+
+  if (average < 220) {
+    return {
+      alt: 'Concentric bass cymatics pattern inspired by low-frequency sand formations.',
+      profile: 'bass',
+      title: 'Bass resonance',
+    };
+  }
+
+  if (average < 1400) {
+    return {
+      alt: 'Oval mid-frequency cymatics pattern inspired by sand settling into balanced nodal shapes.',
+      profile: 'mid',
+      title: 'Midrange geometry',
+    };
+  }
+
+  return {
+    alt: 'Sharp high-frequency cymatics pattern inspired by intricate sand starbursts on a vibrating plate.',
+    profile: 'high',
+    title: 'High-frequency lattice',
+  };
+}
+
 export function useAudioTools() {
   const [active, setActive] = useState('home');
   const [status, setStatus] = useState('Ready');
@@ -52,11 +96,37 @@ export function useAudioTools() {
   const [dtmfKey, setDtmfKey] = useState('5');
   const [bpm, setBpm] = useState(100);
   const [voices, setVoices] = useState([]);
+  const [currentVisual, setCurrentVisual] = useState(null);
   const recorderRef = useRef(null);
   const recorderChunksRef = useRef([]);
   const streamRef = useRef(null);
   const metroTimer = useRef(null);
+  const visualTimerRef = useRef(null);
   const { nodesRef, stop } = useAudioStopper();
+
+  function clearVisualTimer() {
+    if (visualTimerRef.current) {
+      clearTimeout(visualTimerRef.current);
+      visualTimerRef.current = null;
+    }
+  }
+
+  function scheduleVisualReset(milliseconds) {
+    clearVisualTimer();
+    if (!milliseconds || !Number.isFinite(milliseconds) || milliseconds <= 0) {
+      return;
+    }
+    visualTimerRef.current = setTimeout(() => {
+      setCurrentVisual(null);
+      visualTimerRef.current = null;
+    }, milliseconds);
+  }
+
+  function stopPlayback() {
+    clearVisualTimer();
+    setCurrentVisual(null);
+    stop();
+  }
 
   useEffect(() => {
     const loadVoices = () => setVoices(window.speechSynthesis?.getVoices?.() || []);
@@ -66,7 +136,7 @@ export function useAudioTools() {
 
     return () => {
       window.speechSynthesis?.removeEventListener?.('voiceschanged', loadVoices);
-      stop();
+      stopPlayback();
       window.speechSynthesis?.cancel();
       if (metroTimer.current) {
         clearInterval(metroTimer.current);
@@ -81,7 +151,7 @@ export function useAudioTools() {
   const parsedSeq = useMemo(() => parseFrequencies(csvSeq), [csvSeq]);
 
   async function playFrequencies(frequencies, seconds = duration, type = waveform, stereo = false) {
-    stop();
+    stopPlayback();
     const ac = await ensureRunning();
     const master = createMaster(ac, volume / Math.max(frequencies.length, 1));
     nodesRef.current.push(master);
@@ -103,6 +173,8 @@ export function useAudioTools() {
     });
 
     setStatus(`Playing ${frequencies.join(', ')} Hz`);
+    setCurrentVisual(getVisualProfile(frequencies));
+    scheduleVisualReset(seconds * 1000 + 150);
   }
 
   async function exportCurrent(format) {
@@ -118,7 +190,7 @@ export function useAudioTools() {
   }
 
   async function runSweep() {
-    stop();
+    stopPlayback();
     const ac = await ensureRunning();
     const master = createMaster(ac, volume);
     const osc = createOsc(ac, sweepStart, waveform);
@@ -128,10 +200,12 @@ export function useAudioTools() {
     osc.stop(ac.currentTime + duration);
     nodesRef.current.push(master, osc);
     setStatus(`Sweep ${sweepStart} to ${sweepEnd} Hz`);
+    setCurrentVisual(getVisualProfile([sweepStart, sweepEnd], 'sweep'));
+    scheduleVisualReset(duration * 1000 + 150);
   }
 
   async function playSequence() {
-    stop();
+    stopPlayback();
     const ac = await ensureRunning();
     const master = createMaster(ac, volume);
     nodesRef.current.push(master);
@@ -146,10 +220,12 @@ export function useAudioTools() {
     });
 
     setStatus(`Sequence with ${parsedSeq.length} steps`);
+    setCurrentVisual(getVisualProfile(parsedSeq));
+    scheduleVisualReset(parsedSeq.length * 500 + 300);
   }
 
   async function playNoise() {
-    stop();
+    stopPlayback();
     const ac = await ensureRunning();
     const master = createMaster(ac, volume);
     const src = createNoise(ac, noiseKind);
@@ -157,6 +233,7 @@ export function useAudioTools() {
     src.start();
     nodesRef.current.push(master, src);
     setStatus(`${noiseKind} noise running`);
+    setCurrentVisual(getVisualProfile([], 'noise'));
   }
 
   async function playBinaural() {
@@ -175,7 +252,7 @@ export function useAudioTools() {
   }
 
   async function startMetronome() {
-    stop();
+    stopPlayback();
     if (metroTimer.current) {
       clearInterval(metroTimer.current);
     }
@@ -194,6 +271,7 @@ export function useAudioTools() {
     tick();
     metroTimer.current = setInterval(tick, interval);
     setStatus(`Metronome running at ${bpm} BPM`);
+    setCurrentVisual(getVisualProfile([1000]));
   }
 
   function stopMetronome() {
@@ -201,12 +279,12 @@ export function useAudioTools() {
       clearInterval(metroTimer.current);
       metroTimer.current = null;
     }
-    stop();
+    stopPlayback();
     setStatus('Metronome stopped');
   }
 
   async function playPips() {
-    stop();
+    stopPlayback();
     const ac = await ensureRunning();
     const master = createMaster(ac, 0.25);
     nodesRef.current.push(master);
@@ -221,6 +299,8 @@ export function useAudioTools() {
     }
 
     setStatus('Playing pips');
+    setCurrentVisual(getVisualProfile([800, 1000]));
+    scheduleVisualReset(6200);
   }
 
   async function startRecording() {
@@ -276,6 +356,7 @@ export function useAudioTools() {
     source.start();
     nodesRef.current.push(source, master);
     setStatus(`Playing file at rate ${rate}`);
+    setCurrentVisual(getVisualProfile([440 * rate]));
   }
 
   return {
@@ -323,6 +404,7 @@ export function useAudioTools() {
     bpm,
     setBpm,
     voices,
+    currentVisual,
     parsedFreqs,
     parsedSeq,
     playFrequencies,
@@ -340,6 +422,6 @@ export function useAudioTools() {
     speakText,
     stopSpeech,
     playUploaded,
-    stop,
+    stop: stopPlayback,
   };
 }

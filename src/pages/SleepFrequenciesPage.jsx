@@ -1,10 +1,11 @@
 import AffiliateCard from '../components/AffiliateCard';
+import FrequencyVisual from '../components/FrequencyVisual';
 import Panel from '../components/Panel';
 import SeoBlock from '../components/SeoBlock';
 import { affiliateProducts } from '../constants/site';
 
 export default function SleepFrequenciesPage({ tools }) {
-  const { playFrequencies, playNoise, playBinaural, stop } = tools;
+  const { playFrequencies, playNoise, playBinaural, stop, currentVisual } = tools;
 
   return (
     <div className="page-stack">
@@ -21,6 +22,8 @@ export default function SleepFrequenciesPage({ tools }) {
           <button onClick={stop}>Stop</button>
         </div>
       </Panel>
+
+      <FrequencyVisual visual={currentVisual} />
 
       <SeoBlock title="Recommended gear after the listening block" intro="These affiliate placements follow the main playback section so the recommendation is tied to the use case.">
         <div className="card-grid">
