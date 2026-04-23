@@ -6,17 +6,21 @@ import VisitorCount from '../components/VisitorCount';
 export default function MarketingLayout({ status }) {
   return (
     <div className="site-shell">
-      <aside className="site-sidebar">
-        <MarketingNav />
-        <div className="sidebar-meta">
-          <div className="status status-pill">{status}</div>
-          <ThemeModeSelect />
-          <VisitorCount />
+      <header className="site-header">
+        <div>
+          <h1>Audionyx</h1>
+          <p className="site-tagline">Simple online tone tools, hearing checks, and practical frequency pages.</p>
         </div>
-      </aside>
+        <div className="header-controls">
+          <ThemeModeSelect />
+          <div className="status">{status}</div>
+        </div>
+      </header>
+      <MarketingNav />
       <main className="page-frame">
         <Outlet />
       </main>
+      <VisitorCount />
     </div>
   );
 }
