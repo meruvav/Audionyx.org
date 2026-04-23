@@ -1,14 +1,12 @@
 import { useEffect, useState } from 'react';
 
-const COUNTER_KEY = 'site-total';
-
 export default function VisitorCount() {
   const [count, setCount] = useState(null);
   const [error, setError] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
-    const endpoint = `https://api.countapi.xyz/hit/audionyx.org/${COUNTER_KEY}`;
+    const endpoint = '/api/visitors';
 
     async function loadCount() {
       try {
@@ -41,7 +39,7 @@ export default function VisitorCount() {
   return (
     <footer className="visitor-count" aria-live="polite">
       <strong>Total visitors:</strong>{' '}
-      {error ? 'Unavailable right now' : count === null ? 'Loading...' : count.toLocaleString()}
+      {error ? 'Counter setup needed' : count === null ? 'Loading...' : count.toLocaleString()}
     </footer>
   );
 }
