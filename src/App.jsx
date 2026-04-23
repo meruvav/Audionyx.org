@@ -3,6 +3,7 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import { routeTitles } from './constants/site';
 import { useAudioTools } from './hooks/useAudioTools';
 import AboutPage from './pages/AboutPage';
+import CalculatorsPage from './pages/CalculatorsPage';
 import MarketingLayout from './layouts/MarketingLayout';
 import FrequencyGuidePage from './pages/FrequencyGuidePage';
 import HearingTestPage from './pages/HearingTestPage';
@@ -25,6 +26,7 @@ function AppRoutes() {
     <Routes>
       <Route element={<MarketingLayout status={tools.status} />}>
         <Route path="/" element={<HomePage />} />
+        <Route path="/calculators" element={<CalculatorsPage />} />
         <Route path="/hearing-test" element={<HearingTestPage tools={tools} />} />
         <Route path="/tone-generator" element={<ToneGeneratorPage tools={tools} />} />
         <Route path="/sleep-frequencies" element={<SleepFrequenciesPage tools={tools} />} />

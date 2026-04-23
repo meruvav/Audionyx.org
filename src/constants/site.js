@@ -23,6 +23,7 @@ export const sections = [
 
 export const marketingRoutes = [
   { path: '/', label: 'Home' },
+  { path: '/calculators', label: 'Calculators' },
   { path: '/hearing-test', label: 'Hearing Test' },
   { path: '/tone-generator', label: 'Tone Generator' },
   { path: '/sleep-frequencies', label: 'Sleep Frequencies' },
@@ -33,6 +34,7 @@ export const marketingRoutes = [
 
 export const routeTitles = {
   '/': 'Audionyx - Free online hearing test, tone generator, and sleep frequencies',
+  '/calculators': 'Free Online Calculators | Audionyx',
   '/hearing-test': 'Free Online Hearing Test | Audionyx',
   '/tone-generator': 'Simple Online Tone Generator | Audionyx',
   '/sleep-frequencies': 'Sleep and Relaxation Frequencies | Audionyx',

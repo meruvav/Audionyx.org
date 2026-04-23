@@ -8,6 +8,7 @@ export default function HomePage() {
       <Panel title="Audionyx">
         <p>Free browser-based audio tools for hearing checks, simple tone generation, and practical frequency experiments.</p>
         <div className="hero-cta-row">
+          <Link className="button-link" to="/calculators">Open calculators</Link>
           <Link className="button-link" to="/hearing-test">Open hearing test</Link>
           <Link className="button-link" to="/tone-generator">Open tone generator</Link>
           <Link className="button-link" to="/sleep-frequencies">Sleep frequencies</Link>
@@ -19,9 +20,9 @@ export default function HomePage() {
 
       <SeoBlock title="Traffic pages that actually matter" intro="These pages target beginner intent first and keep the site easy to navigate.">
         <div className="card-grid three-up">
+          <article className="info-card"><h4>Calculator Hub</h4><p>Calculator.net-inspired utility directory adapted to the current Audionyx design system.</p><Link className="button-link" to="/calculators">Visit page</Link></article>
           <article className="info-card"><h4>Hearing Test</h4><p>Targets online hearing test intent.</p><Link className="button-link" to="/hearing-test">Visit page</Link></article>
           <article className="info-card"><h4>Simple Tone Generator</h4><p>Targets speaker check and sound test intent.</p><Link className="button-link" to="/tone-generator">Visit page</Link></article>
-          <article className="info-card"><h4>Sleep Frequencies</h4><p>Targets sleep and relaxation frequency searches.</p><Link className="button-link" to="/sleep-frequencies">Visit page</Link></article>
         </div>
       </SeoBlock>
 
