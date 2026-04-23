@@ -24,7 +24,7 @@ export const sections = [
 export const marketingRoutes = [
   { path: '/', label: 'Home' },
   { path: '/motion-trace', label: 'Motion Trace' },
-  { path: '/right-angle-growth', label: 'Right Angle Growth' },
+  { path: '/right-angle-growth', label: 'Bubble Growth' },
   { path: '/calculators', label: 'Calculators' },
   { path: '/hearing-test', label: 'Hearing Test' },
   { path: '/tone-generator', label: 'Tone Generator' },
@@ -37,7 +37,7 @@ export const marketingRoutes = [
 export const routeTitles = {
   '/': 'Audionyx - Free online hearing test, tone generator, and sleep frequencies',
   '/motion-trace': 'Motion Trace Experiment | Audionyx',
-  '/right-angle-growth': 'Right Angle Growth Experiment | Audionyx',
+  '/right-angle-growth': 'Bubble Growth Experiment | Audionyx',
   '/calculators': 'Free Online Calculators | Audionyx',
   '/hearing-test': 'Free Online Hearing Test | Audionyx',
   '/tone-generator': 'Simple Online Tone Generator | Audionyx',

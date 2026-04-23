@@ -5,10 +5,10 @@ import SeoBlock from '../components/SeoBlock';
 export default function RightAngleGrowthPage() {
   return (
     <div className="page-stack">
-      <Panel title="Right-Angle Growth Tab">
+      <Panel title="Bubble Growth Tab">
         <p>
-          This canvas starts with two perpendicular lines, then duplicates and rotates them in 90-degree
-          steps moving toward the right, continuing until the user clicks the canvas.
+          This interaction now turns the tab into a live bubble field. As the mouse moves, it generates
+          random-size bubbles that keep building into a layered composition until the clear button is pressed.
         </p>
       </Panel>
 
@@ -16,12 +16,12 @@ export default function RightAngleGrowthPage() {
 
       <SeoBlock
         title="Interaction Rules"
-        intro="This experiment interprets your requested geometry as an expanding orthogonal branching system."
+        intro="This experiment is now a persistent mouse-reactive bubble sketch built to keep the screen feeling alive."
       >
         <ul>
-          <li>It begins with two 90-degree lines.</li>
-          <li>Each generation copies and rotates the lines by 90 degrees while advancing rightward.</li>
-          <li>The process continues automatically until the user clicks in the window.</li>
+          <li>Mouse movement spawns fresh bubbles automatically.</li>
+          <li>Bubble sizes, drift, and color accents vary on each pass.</li>
+          <li>The scene continues to accumulate until the user clicks the clear button.</li>
         </ul>
       </SeoBlock>
     </div>

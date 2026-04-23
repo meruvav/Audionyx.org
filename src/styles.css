@@ -320,6 +320,16 @@ button {
   background: rgba(4, 12, 20, 0.96);
   box-shadow: 0 24px 48px rgba(0, 0, 0, 0.28);
 }
+.experiment-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+.experiment-clear {
+  white-space: nowrap;
+}
 .experiment-note {
   margin: 12px 4px 0;
   color: var(--muted);
@@ -727,5 +737,9 @@ ul { margin-top: 0; }
   .marketing-nav {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .experiment-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }

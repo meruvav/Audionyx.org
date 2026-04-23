@@ -60,7 +60,7 @@ export default function HomePage() {
           </p>
           <div className="hero-cta-row">
             <Link className="button-link hero-primary" to="/motion-trace">Open motion trace</Link>
-            <Link className="button-link hero-secondary" to="/right-angle-growth">Open right-angle growth</Link>
+            <Link className="button-link hero-secondary" to="/right-angle-growth">Open bubble growth</Link>
             <Link className="button-link hero-secondary" to="/calculators">Utility lab</Link>
           </div>
         </div>
@@ -141,7 +141,7 @@ export default function HomePage() {
           </p>
           <div className="hero-cta-row">
             <Link className="button-link" to="/motion-trace">Mouse movement line system</Link>
-            <Link className="button-link" to="/right-angle-growth">90-degree growth system</Link>
+            <Link className="button-link" to="/right-angle-growth">Bubble growth system</Link>
           </div>
         </Panel>
 
