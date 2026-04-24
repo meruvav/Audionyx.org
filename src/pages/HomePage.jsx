@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Panel from '../components/Panel';
-import ParticleOverlay from '../components/ParticleOverlay';
 import SeoBlock from '../components/SeoBlock';
 import WebGLHeroCanvas from '../components/WebGLHeroCanvas';
 
@@ -44,8 +43,6 @@ export default function HomePage() {
 
   return (
     <div className="portfolio-shell">
-      <ParticleOverlay />
-
       <section className="portfolio-hero" style={{ '--hero-shift': `${Math.min(scrollY * 0.12, 44)}px` }}>
         <div className="hero-copy">
           <p className="hero-kicker">2026 portfolio experience</p>
