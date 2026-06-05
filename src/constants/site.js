@@ -21,17 +21,32 @@ export const sections = [
   { id: 'about', label: 'About' },
 ];
 
-export const marketingRoutes = [
-  { path: '/', label: 'Home' },
-  { path: '/motion-trace', label: 'Motion Trace' },
-  { path: '/right-angle-growth', label: 'Bubble Growth' },
-  { path: '/calculators', label: 'Calculators' },
-  { path: '/hearing-test', label: 'Hearing Test' },
-  { path: '/tone-generator', label: 'Tone Generator' },
-  { path: '/sleep-frequencies', label: 'Sleep Frequencies' },
-  { path: '/frequency-guide', label: 'Frequency Guide' },
-  { path: '/about', label: 'About' },
-  { path: '/support', label: 'Support' },
+export const marketingNavGroups = [
+  { label: 'Home', path: '/' },
+  {
+    label: 'Sound Lab',
+    links: [
+      { path: '/hearing-test', label: 'Hearing Test' },
+      { path: '/tone-generator', label: 'Tone Generator' },
+      { path: '/sleep-frequencies', label: 'Sleep Frequencies' },
+      { path: '/frequency-guide', label: 'Frequency Guide' },
+    ],
+  },
+  {
+    label: 'Stress Relief',
+    links: [
+      { path: '/motion-trace', label: 'Motion Trace' },
+      { path: '/right-angle-growth', label: 'Bubble Growth' },
+    ],
+  },
+  {
+    label: 'Productivity',
+    links: [
+      { path: '/daily-standup', label: 'Daily Standup' },
+    ],
+  },
+  { label: 'Support', path: '/support' },
+  { label: 'About', path: '/about' },
 ];
 
 export const routeTitles = {
@@ -43,6 +58,7 @@ export const routeTitles = {
   '/tone-generator': 'Simple Online Tone Generator | Audionyx Labs',
   '/sleep-frequencies': 'Sleep and Relaxation Frequencies | Audionyx Labs',
   '/frequency-guide': 'What Frequency Should I Use? | Audionyx Labs',
+  '/daily-standup': 'Daily Standup Picker | Audionyx Labs',
   '/about': 'About Audionyx Labs',
   '/support': 'Support Audionyx Labs',
   '/tools': 'Audio Tools Dashboard | Audionyx Labs',

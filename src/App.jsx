@@ -4,6 +4,7 @@ import { routeTitles } from './constants/site';
 import { useAudioTools } from './hooks/useAudioTools';
 import AboutPage from './pages/AboutPage';
 import CalculatorsPage from './pages/CalculatorsPage';
+import DailyStandupPage from './pages/DailyStandupPage';
 import MarketingLayout from './layouts/MarketingLayout';
 import FrequencyGuidePage from './pages/FrequencyGuidePage';
 import HearingTestPage from './pages/HearingTestPage';
@@ -35,6 +36,7 @@ function AppRoutes() {
         <Route path="/tone-generator" element={<ToneGeneratorPage tools={tools} />} />
         <Route path="/sleep-frequencies" element={<SleepFrequenciesPage tools={tools} />} />
         <Route path="/frequency-guide" element={<FrequencyGuidePage />} />
+        <Route path="/daily-standup" element={<DailyStandupPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/support" element={<SupportPage />} />
         <Route path="/tools" element={<ToolsPage tools={tools} />} />

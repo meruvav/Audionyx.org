@@ -191,6 +191,28 @@ button {
   line-height: 1.7;
   color: var(--muted);
 }
+.hero-trust-stats {
+  margin-top: 22px;
+  padding: 16px;
+  border: 1px solid color-mix(in srgb, var(--border) 72%, transparent);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--panel) 66%, transparent);
+  backdrop-filter: blur(16px);
+}
+.hero-trust-stats p {
+  margin: 0 0 10px;
+  color: var(--ink);
+  font-weight: 700;
+}
+.hero-trust-stats div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+}
+.hero-trust-stats span {
+  color: var(--muted);
+  font-weight: 700;
+}
 .hero-cta-row {
   margin-top: 26px;
 }
@@ -688,16 +710,68 @@ button {
   gap: 8px;
   flex-wrap: wrap;
   margin-bottom: 18px;
+  align-items: stretch;
 }
-.marketing-link {
+.marketing-link,
+.marketing-group-trigger {
   background: var(--blue-2);
   color: white;
   padding: 10px 14px;
   border-radius: 4px;
   text-decoration: none;
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
 }
 .marketing-link.active,
-.marketing-link:hover { background: var(--blue-4); }
+.marketing-group-trigger.active,
+.marketing-link:hover,
+.marketing-group:hover .marketing-group-trigger,
+.marketing-group:focus-within .marketing-group-trigger {
+  background: var(--blue-4);
+}
+.marketing-group {
+  position: relative;
+}
+.marketing-group-trigger::after {
+  content: '';
+  width: 0;
+  height: 0;
+  margin-left: 8px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid currentColor;
+}
+.marketing-subnav {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  z-index: 10;
+  display: none;
+  min-width: 210px;
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--panel);
+  box-shadow: 0 18px 34px rgba(8, 19, 31, 0.18);
+}
+.marketing-group:hover .marketing-subnav,
+.marketing-group:focus-within .marketing-subnav {
+  display: grid;
+  gap: 4px;
+}
+.marketing-subnav-link {
+  padding: 10px 12px;
+  border-radius: 4px;
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.marketing-subnav-link:hover,
+.marketing-subnav-link.active {
+  background: color-mix(in srgb, var(--blue-2) 16%, var(--soft));
+  color: var(--blue-4);
+}
 .page-frame {
   display: grid;
   gap: 18px;
@@ -931,6 +1005,16 @@ ul { margin-top: 0; }
   .marketing-nav {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .marketing-link,
+  .marketing-group-trigger {
+    width: 100%;
+    justify-content: center;
+  }
+  .marketing-subnav {
+    position: static;
+    margin-top: 6px;
+    min-width: 0;
   }
   .experiment-toolbar {
     flex-direction: column;
