@@ -8,8 +8,8 @@ export default function MarketingLayout({ status }) {
     <div className="site-shell">
       <header className="site-header">
         <div>
-          <h1>Audionyx</h1>
-          <p className="site-tagline">Simple online tone tools, hearing checks, and practical frequency pages.</p>
+          <h1>AUDIONYX LABS</h1>
+          <p className="site-tagline">Free hearing tests, tone generators, and audio frequency tools.</p>
         </div>
         <div className="header-controls">
           <ThemeModeSelect />
@@ -20,6 +20,10 @@ export default function MarketingLayout({ status }) {
       <main className="page-frame">
         <Outlet />
       </main>
+      <footer className="site-footer">
+        <strong>Audionyx Labs</strong>
+        <span>Measure. Hear. Understand.</span>
+      </footer>
       <VisitorCount />
     </div>
   );

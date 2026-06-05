@@ -21,7 +21,7 @@ function AppRoutes() {
   const tools = useAudioTools();
 
   useEffect(() => {
-    document.title = routeTitles[location.pathname] || 'Audionyx';
+    document.title = routeTitles[location.pathname] || 'Audionyx Labs';
   }, [location.pathname]);
 
   return (

@@ -1,4 +1,4 @@
-# Audionyx
+# Audionyx Labs
 
 A simple React + Vite audio utility site using Ubuntu font and plain hue-based styling.
 

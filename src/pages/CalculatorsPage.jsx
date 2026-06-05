@@ -316,7 +316,7 @@ export default function CalculatorsPage() {
     <div className="page-stack">
       <Panel title="Calculator">
         <p>
-          A full original calculator tab built inside the current Audionyx design system.
+          A full original calculator tab built inside the current Audionyx Labs design system.
           It keeps the fast directory feeling of utility hubs, but every calculator below is
           implemented locally for this project.
         </p>
@@ -345,7 +345,7 @@ export default function CalculatorsPage() {
             <h3>14 working calculators in one tab</h3>
             <p>
               Search calculators by name, jump between financial, health, math, and utility tools,
-              and keep everything inside the same blue Audionyx visual language.
+              and keep everything inside the same blue Audionyx Labs visual language.
             </p>
 
             <label className="field">
@@ -602,7 +602,7 @@ export default function CalculatorsPage() {
         <div className="table-like">
           <div><strong>Working tools</strong><span>Scientific, percentage, discount, loan, savings, tip split, BMI, BMR, pace, age, date difference, GPA, unit conversion, and random number generation.</span></div>
           <div><strong>Searchable hub</strong><span>The search field narrows visible calculators without leaving the page.</span></div>
-          <div><strong>Design fit</strong><span>Everything uses the existing Audionyx typography, panel styling, and blue palette instead of a pasted third-party theme.</span></div>
+          <div><strong>Design fit</strong><span>Everything uses the existing Audionyx Labs typography, panel styling, and blue palette instead of a pasted third-party theme.</span></div>
         </div>
       </SeoBlock>
     </div>

@@ -4,9 +4,9 @@ import SeoBlock from '../components/SeoBlock';
 export default function AboutPage() {
   return (
     <div className="page-stack">
-      <Panel title="About Audionyx">
+      <Panel title="About Audionyx Labs">
         <p>
-          Audionyx is a browser-based collection of tone tools, hearing checks, and
+          Audionyx Labs is a browser-based collection of tone tools, hearing checks, and
           practical frequency pages designed to be fast, simple, and useful.
         </p>
         <p>
@@ -21,7 +21,7 @@ export default function AboutPage() {
         intro="This site format follows the same practical structure as classic online tone tools: clear menu, simple explanation, then technical context."
       >
         <p>
-          Audionyx uses modern browser audio capabilities through the HTML5 Web Audio
+          Audionyx Labs uses modern browser audio capabilities through the HTML5 Web Audio
           API, which lets the app generate tones, sweeps, noise, and playback tools
           directly in the browser.
         </p>

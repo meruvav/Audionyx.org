@@ -4,9 +4,9 @@ import SeoBlock from '../components/SeoBlock';
 export default function SupportPage() {
   return (
     <div className="page-stack">
-      <Panel title="Support Audionyx">
+      <Panel title="Support Audionyx Labs">
         <p>
-          If Audionyx helps you test speakers, check hearing ranges, or generate tones
+          If Audionyx Labs helps you test speakers, check hearing ranges, or generate tones
           quickly, you can support the project directly and help it keep growing.
         </p>
         <div className="support-box">
@@ -49,7 +49,7 @@ export default function SupportPage() {
       >
         <ul>
           <li>Share the hearing test or tone generator page with people who need a quick browser tool.</li>
-          <li>Link to Audionyx from blog posts, playlists, audio forums, or creator resources.</li>
+          <li>Link to Audionyx Labs from blog posts, playlists, audio forums, or creator resources.</li>
           <li>Use the affiliate links on relevant pages if you were already planning to buy gear.</li>
         </ul>
       </SeoBlock>

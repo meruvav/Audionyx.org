@@ -35,17 +35,17 @@ export const marketingRoutes = [
 ];
 
 export const routeTitles = {
-  '/': 'Audionyx - Free online hearing test, tone generator, and sleep frequencies',
-  '/motion-trace': 'Motion Trace Experiment | Audionyx',
-  '/right-angle-growth': 'Bubble Growth Experiment | Audionyx',
-  '/calculators': 'Free Online Calculators | Audionyx',
-  '/hearing-test': 'Free Online Hearing Test | Audionyx',
-  '/tone-generator': 'Simple Online Tone Generator | Audionyx',
-  '/sleep-frequencies': 'Sleep and Relaxation Frequencies | Audionyx',
-  '/frequency-guide': 'What Frequency Should I Use? | Audionyx',
-  '/about': 'About Audionyx',
-  '/support': 'Support Audionyx',
-  '/tools': 'Audio Tools Dashboard | Audionyx',
+  '/': 'Audionyx Labs | Hearing Test & Frequency Tools',
+  '/motion-trace': 'Motion Trace Experiment | Audionyx Labs',
+  '/right-angle-growth': 'Bubble Growth Experiment | Audionyx Labs',
+  '/calculators': 'Free Online Calculators | Audionyx Labs',
+  '/hearing-test': 'Free Online Hearing Test | Audionyx Labs',
+  '/tone-generator': 'Simple Online Tone Generator | Audionyx Labs',
+  '/sleep-frequencies': 'Sleep and Relaxation Frequencies | Audionyx Labs',
+  '/frequency-guide': 'What Frequency Should I Use? | Audionyx Labs',
+  '/about': 'About Audionyx Labs',
+  '/support': 'Support Audionyx Labs',
+  '/tools': 'Audio Tools Dashboard | Audionyx Labs',
 };
 
 export const dtmfMap = {
