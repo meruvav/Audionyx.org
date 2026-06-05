@@ -413,28 +413,6 @@ button {
   border-radius: inherit;
   border: 1px solid rgba(255, 255, 255, 0.28);
 }
-.standup-wheel-label {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: 1;
-  width: 112px;
-  max-width: 36%;
-  overflow: hidden;
-  color: #0f2633;
-  font-size: clamp(0.82rem, 2vw, 1rem);
-  font-weight: 900;
-  line-height: 1.1;
-  text-align: center;
-  text-overflow: ellipsis;
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.58);
-  white-space: nowrap;
-  transform:
-    rotate(var(--label-angle))
-    translateX(104px)
-    translate(-50%, -50%);
-  transform-origin: center center;
-}
 .standup-wheel-center {
   position: absolute;
   inset: 50%;
