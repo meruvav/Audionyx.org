@@ -307,6 +307,140 @@ button {
   color: var(--muted);
   margin-bottom: 0;
 }
+.standup-picker {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.82fr) minmax(320px, 1.18fr);
+  gap: 18px;
+  align-items: stretch;
+  margin-bottom: 18px;
+}
+.standup-picker-controls,
+.standup-wheel-area {
+  border: 1px solid color-mix(in srgb, var(--border) 78%, transparent);
+  border-radius: 8px;
+  background:
+    linear-gradient(160deg, color-mix(in srgb, var(--panel) 78%, transparent), color-mix(in srgb, var(--soft) 88%, transparent));
+}
+.standup-picker-controls {
+  padding: 18px;
+}
+.standup-picker-field {
+  margin-bottom: 12px;
+}
+.standup-picker-field textarea {
+  min-height: 190px;
+  resize: vertical;
+  line-height: 1.5;
+}
+.standup-picker-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.standup-picker-actions button,
+.standup-picker-result button {
+  min-height: 42px;
+  padding: 10px 14px;
+  border-radius: 4px;
+  background: var(--blue-2);
+  color: white;
+}
+.standup-picker-actions button:disabled {
+  cursor: not-allowed;
+  opacity: 0.58;
+}
+.standup-picker-actions button:hover:not(:disabled),
+.standup-picker-result button:hover {
+  background: var(--blue-4);
+}
+.standup-picker-actions .standup-secondary-btn,
+.standup-picker-result .standup-secondary-btn {
+  background: color-mix(in srgb, var(--panel) 66%, transparent);
+  border: 1px solid color-mix(in srgb, var(--border) 72%, transparent);
+  color: var(--ink);
+}
+.standup-picker-count {
+  margin: 12px 0 0;
+  color: var(--muted);
+}
+.standup-wheel-area {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(220px, 320px) 1fr;
+  gap: 18px;
+  align-items: center;
+  min-height: 330px;
+  padding: 22px;
+  overflow: hidden;
+}
+.standup-wheel-pointer {
+  position: absolute;
+  top: 50%;
+  left: min(342px, calc(22px + 320px));
+  z-index: 2;
+  width: 0;
+  height: 0;
+  border-top: 14px solid transparent;
+  border-bottom: 14px solid transparent;
+  border-right: 24px solid var(--ink);
+  transform: translate(-12px, -50%);
+}
+.standup-wheel {
+  position: relative;
+  width: min(100%, 320px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 10px solid color-mix(in srgb, var(--panel) 70%, transparent);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.24), 0 20px 46px rgba(8, 19, 31, 0.22);
+  transition: transform 1500ms cubic-bezier(0.14, 0.78, 0.24, 1);
+}
+.standup-wheel::before {
+  content: '';
+  position: absolute;
+  inset: 14px;
+  border-radius: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+}
+.standup-wheel-center {
+  position: absolute;
+  inset: 50%;
+  display: grid;
+  place-items: center;
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  background: var(--panel);
+  color: var(--ink);
+  font-weight: 700;
+  box-shadow: 0 12px 26px rgba(8, 19, 31, 0.2);
+  transform: translate(-50%, -50%);
+}
+.standup-wheel.spinning .standup-wheel-center {
+  color: var(--blue-3);
+}
+.standup-picker-result {
+  display: grid;
+  gap: 12px;
+  align-content: center;
+  min-height: 190px;
+  padding: 18px;
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at top right, rgba(142, 247, 212, 0.18), transparent 36%),
+    color-mix(in srgb, var(--soft) 84%, var(--panel) 16%);
+}
+.standup-picker-result span {
+  color: #7ce8ff;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.standup-picker-result strong {
+  font-size: clamp(1.8rem, 5vw, 3.2rem);
+  line-height: 1;
+  word-break: break-word;
+}
 .standup-name-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -715,6 +849,7 @@ ul { margin-top: 0; }
   .portfolio-hero,
   .portfolio-project-grid,
   .portfolio-panel-stack,
+  .standup-picker,
   .standup-name-grid,
   .bento-grid,
   .card-grid.three-up,
@@ -737,6 +872,21 @@ ul { margin-top: 0; }
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 4px;
+  }
+  .standup-wheel-area {
+    grid-template-columns: 1fr;
+  }
+  .standup-wheel {
+    justify-self: center;
+  }
+  .standup-wheel-pointer {
+    top: 22px;
+    left: 50%;
+    border-right: 14px solid transparent;
+    border-left: 14px solid transparent;
+    border-top: 0;
+    border-bottom: 24px solid var(--ink);
+    transform: translateX(-50%);
   }
 }
 @media (max-width: 720px) {
@@ -773,5 +923,9 @@ ul { margin-top: 0; }
   .experiment-toolbar {
     flex-direction: column;
     align-items: flex-start;
+  }
+  .standup-picker-actions button,
+  .standup-picker-result button {
+    width: 100%;
   }
 }
