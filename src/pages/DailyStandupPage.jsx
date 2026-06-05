@@ -134,15 +134,14 @@ export default function DailyStandupPage() {
               {pickerNames.map((name, index) => {
                 const sliceDegrees = 360 / pickerNames.length;
                 const angle = index * sliceDegrees + sliceDegrees / 2;
-                const labelRotation = angle > 90 && angle < 270 ? 180 : 0;
+                const labelAngle = angle - 90;
 
                 return (
                   <span
                     key={`${name}-${index}`}
                     className="standup-wheel-label"
                     style={{
-                      '--label-angle': `${angle}deg`,
-                      '--label-rotation': `${labelRotation}deg`,
+                      '--label-angle': `${labelAngle}deg`,
                     }}
                   >
                     {name}

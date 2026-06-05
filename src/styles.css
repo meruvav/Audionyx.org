@@ -418,12 +418,12 @@ button {
   top: 50%;
   left: 50%;
   z-index: 1;
-  width: 104px;
-  max-width: 34%;
+  width: 112px;
+  max-width: 36%;
   overflow: hidden;
   color: #0f2633;
-  font-size: clamp(0.68rem, 1.7vw, 0.82rem);
-  font-weight: 800;
+  font-size: clamp(0.82rem, 2vw, 1rem);
+  font-weight: 900;
   line-height: 1.1;
   text-align: center;
   text-overflow: ellipsis;
@@ -431,8 +431,7 @@ button {
   white-space: nowrap;
   transform:
     rotate(var(--label-angle))
-    translateX(94px)
-    rotate(var(--label-rotation))
+    translateX(104px)
     translate(-50%, -50%);
   transform-origin: center center;
 }
