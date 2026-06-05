@@ -19,7 +19,7 @@ const standupNames = [
   },
 ];
 
-const pickerColors = ['#58c5ff', '#8ef7d4', '#6b8cff', '#f9d65c', '#ff8aa3', '#b99cff', '#7ce8ff', '#77dd88'];
+const pickerColors = ['#2f80ed', '#7bc6a4', '#a7d8bd', '#8fb7f2', '#d6eadf', '#5aa7ee', '#9fd5b8', '#c8e7d4'];
 
 function getRandomIndex(length) {
   if (length <= 0) return -1;
@@ -47,7 +47,7 @@ export default function DailyStandupPage() {
 
   const wheelGradient = useMemo(() => {
     if (pickerNames.length === 0) {
-      return 'linear-gradient(135deg, rgba(88, 197, 255, 0.32), rgba(142, 247, 212, 0.22))';
+      return 'linear-gradient(135deg, rgba(47, 128, 237, 0.26), rgba(123, 198, 164, 0.24))';
     }
 
     const slice = 100 / pickerNames.length;

@@ -1,27 +1,27 @@
 :root {
-  --blue-1: #6eb7ee;
-  --blue-2: #49a3df;
-  --blue-3: #2e78b0;
-  --blue-4: #1e5f90;
-  --ink: #17324f;
-  --muted: #4d6d88;
-  --bg: #edf5fb;
+  --blue-1: #7bc6a4;
+  --blue-2: #2f80ed;
+  --blue-3: #2b6fc5;
+  --blue-4: #1f5fb8;
+  --ink: #243447;
+  --muted: #617284;
+  --bg: #f6f8f5;
   --panel: #ffffff;
-  --border: #bfd7ea;
-  --soft: #f7fbfe;
+  --border: #d7e5dc;
+  --soft: #eef6f1;
   color-scheme: light;
 }
 :root[data-theme='dark'] {
-  --blue-1: #27628f;
-  --blue-2: #1f5278;
-  --blue-3: #357eb7;
-  --blue-4: #8fcbff;
-  --ink: #e8f2fb;
-  --muted: #aac2d8;
-  --bg: #08131d;
-  --panel: #112131;
-  --border: #21415d;
-  --soft: #172b3e;
+  --blue-1: #7bc6a4;
+  --blue-2: #2f80ed;
+  --blue-3: #65a8f4;
+  --blue-4: #9cc7f8;
+  --ink: #eef7f2;
+  --muted: #b6c7bf;
+  --bg: #0f1a20;
+  --panel: #18272d;
+  --border: #2f4647;
+  --soft: #21343a;
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
@@ -170,7 +170,7 @@ button {
   text-transform: uppercase;
   letter-spacing: 0.22em;
   font-size: 0.8rem;
-  color: #82e9ff;
+  color: #2f80ed;
 }
 .hero-title {
   margin: 0;
@@ -181,7 +181,7 @@ button {
 }
 .hero-title span {
   display: block;
-  color: #8ef7d4;
+  color: #7bc6a4;
   transform: translateX(calc(var(--hero-shift, 0px) * 0.4));
 }
 .hero-summary {
@@ -200,8 +200,8 @@ button {
   border-radius: 999px;
 }
 .hero-primary {
-  background: linear-gradient(135deg, #58c5ff, #6b8cff);
-  box-shadow: 0 18px 30px rgba(77, 144, 255, 0.24);
+  background: linear-gradient(135deg, #2f80ed, #7bc6a4);
+  box-shadow: 0 18px 30px rgba(47, 128, 237, 0.22);
 }
 .hero-secondary {
   background: color-mix(in srgb, var(--panel) 62%, transparent);
@@ -214,9 +214,9 @@ button {
   border-radius: 28px;
   overflow: hidden;
   background:
-    radial-gradient(circle at 20% 20%, rgba(97, 219, 255, 0.16), transparent 28%),
-    radial-gradient(circle at 80% 18%, rgba(112, 106, 255, 0.18), transparent 24%),
-    linear-gradient(160deg, rgba(8, 17, 28, 0.9), rgba(18, 34, 49, 0.68));
+    radial-gradient(circle at 20% 20%, rgba(123, 198, 164, 0.22), transparent 28%),
+    radial-gradient(circle at 80% 18%, rgba(47, 128, 237, 0.2), transparent 24%),
+    linear-gradient(160deg, rgba(15, 26, 32, 0.92), rgba(36, 52, 71, 0.68));
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 26px 50px rgba(0, 0, 0, 0.28);
   backdrop-filter: blur(22px);
 }
@@ -242,7 +242,7 @@ button {
   font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.18em;
-  color: #9ee7ff;
+  color: #b8edd7;
 }
 .hero-card-a { top: 36px; right: 34px; }
 .hero-card-b { left: 36px; bottom: 42px; }
@@ -266,7 +266,7 @@ button {
 .portfolio-project-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 24px 42px rgba(8, 19, 31, 0.22);
-  border-color: color-mix(in srgb, #6ecbff 55%, var(--border));
+  border-color: color-mix(in srgb, #7bc6a4 55%, var(--border));
 }
 .bento-card-feature { grid-column: span 2; }
 .bento-card-list ul {
@@ -278,7 +278,7 @@ button {
 }
 .bento-label {
   margin: 0 0 12px;
-  color: #7ddfff;
+  color: #2f80ed;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   font-size: 0.78rem;
@@ -302,12 +302,12 @@ button {
   border-radius: 22px;
   border: 1px solid color-mix(in srgb, var(--border) 78%, transparent);
   background:
-    radial-gradient(circle at top right, rgba(110, 183, 238, 0.16), transparent 36%),
+    radial-gradient(circle at top right, rgba(123, 198, 164, 0.18), transparent 36%),
     linear-gradient(160deg, color-mix(in srgb, var(--panel) 72%, transparent), color-mix(in srgb, var(--soft) 88%, transparent));
   transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
 }
 .portfolio-project-card span {
-  color: #7ce8ff;
+  color: #2f80ed;
   font-size: 0.8rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -438,11 +438,11 @@ button {
   padding: 18px;
   border-radius: 8px;
   background:
-    radial-gradient(circle at top right, rgba(142, 247, 212, 0.18), transparent 36%),
+    radial-gradient(circle at top right, rgba(123, 198, 164, 0.18), transparent 36%),
     color-mix(in srgb, var(--soft) 84%, var(--panel) 16%);
 }
 .standup-picker-result span {
-  color: #7ce8ff;
+  color: #2f80ed;
   font-size: 0.76rem;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -464,12 +464,12 @@ button {
   border: 1px solid color-mix(in srgb, var(--border) 78%, transparent);
   border-radius: 8px;
   background:
-    radial-gradient(circle at top right, rgba(142, 247, 212, 0.14), transparent 34%),
+    radial-gradient(circle at top right, rgba(123, 198, 164, 0.16), transparent 34%),
     linear-gradient(160deg, color-mix(in srgb, var(--panel) 76%, transparent), color-mix(in srgb, var(--soft) 88%, transparent));
 }
 .standup-name-card span {
   display: block;
-  color: #7ce8ff;
+  color: #2f80ed;
   font-size: 0.76rem;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -857,7 +857,7 @@ input, textarea, select {
   gap: 16px;
 }
 .sidebar {
-  background: #f5fbff;
+  background: #eef6f1;
   padding: 4px;
   border: 1px solid var(--border);
   border-radius: 6px;
@@ -878,7 +878,7 @@ input, textarea, select {
   position: absolute;
   right: 8px;
   top: 8px;
-  background: #7ed957;
+  background: #7bc6a4;
   color: white;
   font-size: 11px;
   border-radius: 999px;
