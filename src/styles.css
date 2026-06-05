@@ -191,28 +191,6 @@ button {
   line-height: 1.7;
   color: var(--muted);
 }
-.hero-trust-stats {
-  margin-top: 22px;
-  padding: 16px;
-  border: 1px solid color-mix(in srgb, var(--border) 72%, transparent);
-  border-radius: 8px;
-  background: color-mix(in srgb, var(--panel) 66%, transparent);
-  backdrop-filter: blur(16px);
-}
-.hero-trust-stats p {
-  margin: 0 0 10px;
-  color: var(--ink);
-  font-weight: 700;
-}
-.hero-trust-stats div {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 14px;
-}
-.hero-trust-stats span {
-  color: var(--muted);
-  font-weight: 700;
-}
 .hero-cta-row {
   margin-top: 26px;
 }

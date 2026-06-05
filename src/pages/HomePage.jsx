@@ -32,20 +32,6 @@ const capabilities = [
   'Browser-based sound experiments',
 ];
 
-const usageStats = [
-  { label: 'Hearing Tests', base: 18542, dailyGrowth: 37 },
-  { label: 'Tones Generated', base: 32118, dailyGrowth: 86 },
-  { label: 'Relaxation Sessions', base: 9841, dailyGrowth: 29 },
-];
-
-function getGrowingStat(base, dailyGrowth) {
-  const start = Date.UTC(2026, 5, 5);
-  const today = new Date();
-  const current = Date.UTC(today.getFullYear(), today.getMonth(), today.getDate());
-  const days = Math.max(0, Math.floor((current - start) / 86400000));
-  return (base + days * dailyGrowth).toLocaleString();
-}
-
 export default function HomePage() {
   const [scrollY, setScrollY] = useState(0);
 
@@ -72,14 +58,6 @@ export default function HomePage() {
             <Link className="button-link hero-primary" to="/hearing-test">Start hearing test</Link>
             <Link className="button-link hero-secondary" to="/tone-generator">Open tone generator</Link>
             <Link className="button-link hero-secondary" to="/sleep-frequencies">Explore sleep frequencies</Link>
-          </div>
-          <div className="hero-trust-stats" aria-label="Audionyx Labs usage stats">
-            <p>Trusted by audio enthusiasts worldwide</p>
-            <div>
-              {usageStats.map((stat) => (
-                <span key={stat.label}>{'\u2713'} {getGrowingStat(stat.base, stat.dailyGrowth)} {stat.label}</span>
-              ))}
-            </div>
           </div>
         </div>
 
