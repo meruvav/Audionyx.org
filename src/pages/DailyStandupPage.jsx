@@ -131,6 +131,24 @@ export default function DailyStandupPage() {
               style={{ background: wheelGradient, transform: `rotate(${wheelRotation}deg)` }}
               aria-hidden="true"
             >
+              {pickerNames.map((name, index) => {
+                const sliceDegrees = 360 / pickerNames.length;
+                const angle = index * sliceDegrees + sliceDegrees / 2;
+                const labelRotation = angle > 90 && angle < 270 ? 180 : 0;
+
+                return (
+                  <span
+                    key={`${name}-${index}`}
+                    className="standup-wheel-label"
+                    style={{
+                      '--label-angle': `${angle}deg`,
+                      '--label-rotation': `${labelRotation}deg`,
+                    }}
+                  >
+                    {name}
+                  </span>
+                );
+              })}
               <div className="standup-wheel-center">Spin</div>
             </div>
             <div className="standup-picker-result" aria-live="polite">

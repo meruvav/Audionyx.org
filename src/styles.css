@@ -413,6 +413,28 @@ button {
   border-radius: inherit;
   border: 1px solid rgba(255, 255, 255, 0.28);
 }
+.standup-wheel-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  width: 118px;
+  max-width: 38%;
+  overflow: hidden;
+  color: #0f2633;
+  font-size: clamp(0.68rem, 1.7vw, 0.82rem);
+  font-weight: 800;
+  line-height: 1.1;
+  text-align: left;
+  text-overflow: ellipsis;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.58);
+  white-space: nowrap;
+  transform:
+    rotate(var(--label-angle))
+    translateX(74px)
+    rotate(var(--label-rotation));
+  transform-origin: left center;
+}
 .standup-wheel-center {
   position: absolute;
   inset: 50%;
@@ -426,6 +448,7 @@ button {
   font-weight: 700;
   box-shadow: 0 12px 26px rgba(8, 19, 31, 0.2);
   transform: translate(-50%, -50%);
+  z-index: 2;
 }
 .standup-wheel.spinning .standup-wheel-center {
   color: var(--blue-3);
