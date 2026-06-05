@@ -32,6 +32,24 @@ const capabilities = [
   'Parallax-inspired floating sections',
 ];
 
+const standupNames = [
+  {
+    name: 'Daily Sync',
+    tone: 'Clear and professional',
+    copy: 'A simple, familiar name for quick alignment, blockers, and next steps.',
+  },
+  {
+    name: 'Morning Pulse',
+    tone: 'Energetic and branded',
+    copy: 'A memorable option for teams that want the meeting to feel focused and alive.',
+  },
+  {
+    name: 'Team Huddle',
+    tone: 'Friendly and collaborative',
+    copy: 'An approachable name that makes the daily check-in feel less corporate.',
+  },
+];
+
 export default function HomePage() {
   const [scrollY, setScrollY] = useState(0);
 
@@ -125,6 +143,21 @@ export default function HomePage() {
               <span>{String(index + 1).padStart(2, '0')}</span>
               <h4>{project.title}</h4>
               <p>{project.copy}</p>
+            </article>
+          ))}
+        </div>
+      </SeoBlock>
+
+      <SeoBlock
+        title="Daily Standup Naming"
+        intro="Three concise meeting names that keep the daily team check-in easy to recognize and simple to remember."
+      >
+        <div className="standup-name-grid">
+          {standupNames.map((option) => (
+            <article key={option.name} className="standup-name-card">
+              <span>{option.tone}</span>
+              <h4>{option.name}</h4>
+              <p>{option.copy}</p>
             </article>
           ))}
         </div>
