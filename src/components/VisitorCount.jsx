@@ -1,16 +1,20 @@
 import { useEffect, useState } from 'react';
 
+const COUNT_API_ENDPOINT = 'https://countapi.mileshilliard.com/api/v1/hit/audionyx_online_home_visitors';
+
 export default function VisitorCount() {
   const [count, setCount] = useState(null);
   const [error, setError] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
-    const endpoint = '/api/visitors';
+    const controller = new AbortController();
 
     async function loadCount() {
       try {
-        const response = await fetch(endpoint);
+        const timeout = window.setTimeout(() => controller.abort(), 6000);
+        const response = await fetch(COUNT_API_ENDPOINT, { signal: controller.signal });
+        window.clearTimeout(timeout);
 
         if (!response.ok) {
           throw new Error(`Counter request failed with ${response.status}`);
@@ -33,13 +37,14 @@ export default function VisitorCount() {
 
     return () => {
       cancelled = true;
+      controller.abort();
     };
   }, []);
 
   return (
     <footer className="visitor-count" aria-live="polite">
-      <strong>Total visitors:</strong>{' '}
-      {error ? 'Counter setup needed' : count === null ? 'Loading...' : count.toLocaleString()}
+      <strong>Visitors:</strong>{' '}
+      {error ? 'Count unavailable' : count === null ? 'Loading...' : count.toLocaleString()}
     </footer>
   );
 }
