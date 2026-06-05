@@ -17,6 +17,7 @@ export default function SupportPage() {
           </p>
           <form action="https://www.paypal.com/donate" method="post" target="_blank" className="paypal-form">
             <input type="hidden" name="business" value="vinai.meruva@gmail.com" />
+            <input type="hidden" name="item_name" value="Donate to Creator" />
             <input type="hidden" name="currency_code" value="USD" />
             <button type="submit">Pay with PayPal</button>
           </form>
